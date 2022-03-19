@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <NumberPicker
+        android:id="@+id/numberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonAddNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/addNumber"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/buttonClearNumber"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numberPicker"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <Button
+        android:id="@+id/buttonClearNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clearNumber"
+        app:layout_constraintBottom_toBottomOf="@id/buttonAddNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonAddNumber"
+        app:layout_constraintTop_toTopOf="@id/buttonAddNumber" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonAddNumber">
+
+        <TextView
+            android:id="@+id/textViewOne"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle_yellow"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="11"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textViewTwo"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle_red"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="11"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textViewThree"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle_blue"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="11"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textViewFour"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle_yellow"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="11"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textViewFive"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle_gray"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="11"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textViewSix"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle_green"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="11"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonCreateNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/createNumber"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
