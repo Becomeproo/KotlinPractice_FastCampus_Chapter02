@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    private val setPickedNumber = hashSetOf<Int>()
+    private val setPickedNumber = hashSetOf<Int>() // 중복 방지
 
     private var didRun = false
 
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initAddButton() {
         buttonAddNumber.setOnClickListener {
-            if (didRun) {
+            if (didRun) { // 자동 생성이 활성화 된 경우
                 Toast.makeText(this, "초기화 후에 시도해주세요.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val textView = listNumberTextView[setPickedNumber.size]
+            val textView = listNumberTextView[setPickedNumber.size] // set의 크기가 초기화하는 배열의 위치를 뜻함
             textView.text = numberPicker.value.toString()
             textView.isVisible = true
 
@@ -98,29 +98,29 @@ class MainActivity : AppCompatActivity() {
             didRun = false
             setPickedNumber.clear()
 
-            listNumberTextView.forEach {
+            listNumberTextView.forEach { // forEach : 리스트의 인덱스들을 순차적으로 꺼내어 지정하는 함수
                 it.isVisible = false
             }
         }
     }
 
-    private fun getRandomNumber(): List<Int> {
+    private fun getRandomNumber(): List<Int> { // 무작위 번호 생성 함수
         val randomNumber = mutableListOf<Int>().apply {
             for (i in 1..45) {
-                if (setPickedNumber.contains(i)) {
+                if (setPickedNumber.contains(i)) { // 이미 선택된 번호는 제외
                     continue
                 }
                 this.add(i)
             }
         }
 
-        randomNumber.shuffle()
+        randomNumber.shuffle() // 생성된 번호 섞기
         val newRandomNumber =
-            setPickedNumber.toList() + randomNumber.subList(0, 6 - setPickedNumber.size)
-        return newRandomNumber.sorted()
+            setPickedNumber.toList() + randomNumber.subList(0, 6 - setPickedNumber.size) // 이미 선택된 번호의 리스트 + 생성된 무작위 번호의 리스트
+        return newRandomNumber.sorted() // 리스트를 정렬하여 반환
     }
 
-    private fun setNumberBackground(textView: TextView, number: Int) {
+    private fun setNumberBackground(textView: TextView, number: Int) { // 로또 공과 같은 모양 생성 함수
         when (number) {
             in 1..10 -> textView.background =
                 ContextCompat.getDrawable(this, R.drawable.circle_yellow)
